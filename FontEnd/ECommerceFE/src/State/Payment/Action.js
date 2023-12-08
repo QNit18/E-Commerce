@@ -27,7 +27,7 @@ export const updatePayment = (reqData) => async (dispatch) => {
             const { data } = await api.get(`/api/payments/update/${reqData.paymentId}`);
             dispatch({ type: UPDATE_PAYMENT_SUCCESS });
         } else {
-            //window.location.href = "";
+            window.location.href = "/payment/2/fail";
         }
     } catch (error) {
         dispatch({ type: UPDATE_PAYMENT_FAILURE, payload: error.message });
